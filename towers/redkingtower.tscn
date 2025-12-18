@@ -1,0 +1,41 @@
+[gd_scene load_steps=7 format=3 uid="uid://vf2iypqbqu8b"]
+
+[ext_resource type="Script" path="res://towers/redkingtower.gd" id="1_e3xhk"]
+[ext_resource type="Texture2D" uid="uid://b65gk81u48g41" path="res://assets/red_king_tower.png" id="2_habm3"]
+[ext_resource type="Texture2D" uid="uid://bnuhus76eida2" path="res://assets/healthbar1.png" id="3_ki8d1"]
+[ext_resource type="Texture2D" uid="uid://dmfrvlxc6wc45" path="res://assets/healthbar2.png" id="4_potuw"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_kvcr2"]
+size = Vector2(20, 19.9833)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_l7bed"]
+size = Vector2(602.5, 597.5)
+
+[node name="RedKingtower" type="StaticBody2D" groups=["enemy_tower"]]
+collision_layer = 2
+script = ExtResource("1_e3xhk")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+position = Vector2(12, -98.25)
+scale = Vector2(30, 30)
+shape = SubResource("RectangleShape2D_kvcr2")
+
+[node name="Area2D" type="Area2D" parent="."]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Area2D"]
+position = Vector2(11.75, -99.25)
+shape = SubResource("RectangleShape2D_l7bed")
+
+[node name="Red_king_tower" type="Sprite2D" parent="."]
+texture_filter = 1
+position = Vector2(46, -430)
+scale = Vector2(20, 20)
+texture = ExtResource("2_habm3")
+
+[node name="HealthBar" type="TextureProgressBar" parent="."]
+offset_left = -249.0
+offset_top = -582.0
+offset_right = 263.0
+offset_bottom = -326.0
+texture_under = ExtResource("3_ki8d1")
+texture_progress = ExtResource("4_potuw")

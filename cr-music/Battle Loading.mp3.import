@@ -1,0 +1,19 @@
+[remap]
+
+importer="mp3"
+type="AudioStreamMP3"
+uid="uid://byyotlornblk2"
+path="res://.godot/imported/Battle Loading.mp3-c66724106a5e0f17543245b862973921.mp3str"
+
+[deps]
+
+source_file="res://cr-music/Battle Loading.mp3"
+dest_files=["res://.godot/imported/Battle Loading.mp3-c66724106a5e0f17543245b862973921.mp3str"]
+
+[params]
+
+loop=false
+loop_offset=0
+bpm=0
+beat_count=0
+bar_beats=4

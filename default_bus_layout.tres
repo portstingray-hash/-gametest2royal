@@ -1,0 +1,11 @@
+[gd_resource type="AudioBusLayout" load_steps=2 format=3 uid="uid://bw5hp83wbyvjs"]
+
+[sub_resource type="AudioEffectStereoEnhance" id="AudioEffectStereoEnhance_bfk3t"]
+resource_name = "StereoEnhance"
+
+[resource]
+bus/0/solo = true
+bus/0/bypass_fx = true
+bus/0/volume_db = 6.02
+bus/0/effect/0/effect = SubResource("AudioEffectStereoEnhance_bfk3t")
+bus/0/effect/0/enabled = true

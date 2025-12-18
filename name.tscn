@@ -1,0 +1,61 @@
+[gd_scene load_steps=5 format=3 uid="uid://c1q2yxaihdkhf"]
+
+[ext_resource type="Texture2D" uid="uid://d10a244aqiqlu" path="res://assets/background_cr.png" id="1_3htwi"]
+[ext_resource type="Script" path="res://name.gd" id="1_mr0on"]
+[ext_resource type="FontFile" uid="uid://cp3jhwoobaa2l" path="res://assets/MinecraftBold-nMK1.otf" id="3_qikvv"]
+[ext_resource type="Texture2D" uid="uid://chi47sawi87v5" path="res://assets/button.png" id="4_dyq5l"]
+
+[node name="Name" type="Node2D"]
+script = ExtResource("1_mr0on")
+
+[node name="BackgroundCr" type="Sprite2D" parent="."]
+position = Vector2(1688.5, 1101.75)
+scale = Vector2(2.31837, 2.28238)
+texture = ExtResource("1_3htwi")
+
+[node name="ColorRect" type="ColorRect" parent="."]
+offset_right = 3369.0
+offset_bottom = 2206.0
+size_flags_vertical = 4
+color = Color(0, 0, 0, 0.52549)
+
+[node name="Label" type="Label" parent="ColorRect"]
+layout_mode = 0
+offset_left = 695.0
+offset_top = 1504.0
+offset_right = 2195.0
+offset_bottom = 2135.0
+theme_override_fonts/font = ExtResource("3_qikvv")
+theme_override_font_sizes/font_size = 100
+text = "Insert 
+Name"
+
+[node name="TextEdit" type="TextEdit" parent="ColorRect/Label"]
+layout_mode = 0
+offset_left = 553.0
+offset_top = -8.0
+offset_right = 1605.0
+offset_bottom = 236.0
+theme_override_fonts/font = ExtResource("3_qikvv")
+theme_override_font_sizes/font_size = 100
+placeholder_text = "Name"
+
+[node name="Confirmbutton" type="TextureButton" parent="."]
+offset_left = 1353.0
+offset_top = 1796.0
+offset_right = 1865.0
+offset_bottom = 2052.0
+scale = Vector2(1.2, 1)
+texture_normal = ExtResource("4_dyq5l")
+
+[node name="Label2" type="Label" parent="."]
+offset_left = 1419.0
+offset_top = 1868.0
+offset_right = 1889.0
+offset_bottom = 1968.0
+theme_override_fonts/font = ExtResource("3_qikvv")
+theme_override_font_sizes/font_size = 100
+text = "CONFIRM"
+
+[connection signal="text_changed" from="ColorRect/Label/TextEdit" to="." method="_on_text_edit_text_changed"]
+[connection signal="pressed" from="Confirmbutton" to="." method="_on_confirmbutton_pressed"]

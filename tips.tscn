@@ -1,0 +1,71 @@
+[gd_scene load_steps=11 format=3 uid="uid://52x3mka4clr"]
+
+[ext_resource type="Script" path="res://tips.gd" id="1_6r5cq"]
+[ext_resource type="Texture2D" uid="uid://d10a244aqiqlu" path="res://assets/background_cr.png" id="2_3yi1e"]
+[ext_resource type="FontFile" uid="uid://cp3jhwoobaa2l" path="res://assets/MinecraftBold-nMK1.otf" id="2_r4g8b"]
+[ext_resource type="Texture2D" uid="uid://dmfrvlxc6wc45" path="res://assets/healthbar2.png" id="3_s71nk"]
+[ext_resource type="Texture2D" uid="uid://bnuhus76eida2" path="res://assets/healthbar1.png" id="4_3fd53"]
+[ext_resource type="Texture2D" uid="uid://o1c5tj5s5wrx" path="res://assets/Untitled.png" id="5_uf0xp"]
+[ext_resource type="Texture2D" uid="uid://c115sbcvm34qr" path="res://assets/royal.png" id="6_buw3c"]
+[ext_resource type="Texture2D" uid="uid://dkypsag2guf6p" path="res://assets/renderbanner.png" id="7_jac03"]
+[ext_resource type="Texture2D" uid="uid://ddpm4iwse12py" path="res://assets/royal-logo.png" id="7_u8jsb"]
+[ext_resource type="AudioStream" uid="uid://dgieapvcljehv" path="res://cr-music/overtime-sound.mp3" id="8_q0wu5"]
+
+[node name="Tips" type="Node2D"]
+script = ExtResource("1_6r5cq")
+
+[node name="BackgroundCr" type="Sprite2D" parent="."]
+position = Vector2(1688.5, 1101.75)
+scale = Vector2(2.31837, 2.28238)
+texture = ExtResource("2_3yi1e")
+
+[node name="loading" type="TextureProgressBar" parent="."]
+offset_left = 948.0
+offset_top = 1726.0
+offset_right = 1470.0
+offset_bottom = 1982.0
+scale = Vector2(3, 1)
+texture_over = ExtResource("4_3fd53")
+texture_progress = ExtResource("3_s71nk")
+
+[node name="Label" type="Label" parent="."]
+offset_left = 1498.0
+offset_top = 1650.0
+offset_right = 2058.0
+offset_bottom = 1750.0
+theme_override_fonts/font = ExtResource("2_r4g8b")
+theme_override_font_sizes/font_size = 100
+text = "LOADING..."
+
+[node name="Tips" type="Label" parent="."]
+offset_left = 998.0
+offset_top = 1900.0
+offset_right = 1258.0
+offset_bottom = 2000.0
+theme_override_fonts/font = ExtResource("2_r4g8b")
+theme_override_font_sizes/font_size = 80
+text = "Test"
+
+[node name="AudioStreamPlayer" type="AudioStreamPlayer" parent="."]
+stream = ExtResource("8_q0wu5")
+autoplay = true
+
+[node name="Sprite2D" type="Sprite2D" parent="."]
+position = Vector2(1703, 915)
+scale = Vector2(20, 20)
+texture = ExtResource("7_jac03")
+
+[node name="Untitled" type="Sprite2D" parent="Sprite2D"]
+position = Vector2(-12.6, 23)
+scale = Vector2(0.025, 0.025)
+texture = ExtResource("5_uf0xp")
+
+[node name="Royal-logo" type="Sprite2D" parent="Sprite2D"]
+position = Vector2(14.2, 23.5)
+scale = Vector2(0.025, 0.025)
+texture = ExtResource("7_u8jsb")
+
+[node name="Royal" type="Sprite2D" parent="Sprite2D"]
+position = Vector2(-9, 29.55)
+scale = Vector2(0.025, 0.025)
+texture = ExtResource("6_buw3c")

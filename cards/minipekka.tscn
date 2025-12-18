@@ -1,0 +1,43 @@
+[gd_scene load_steps=4 format=3 uid="uid://dmatce8tnwa0v"]
+
+[ext_resource type="Script" path="res://cards/minipekka.gd" id="1_x1gaf"]
+
+[sub_resource type="CircleShape2D" id="CircleShape2D_deew5"]
+radius = 140.057
+
+[sub_resource type="CircleShape2D" id="CircleShape2D_ulhxi"]
+radius = 143.349
+
+[node name="MiniPekka" type="CharacterBody2D" groups=["troops"]]
+collision_mask = 2
+script = ExtResource("1_x1gaf")
+
+[node name="ColorRect" type="ColorRect" parent="."]
+offset_left = -76.0
+offset_top = -57.0
+offset_right = 122.0
+offset_bottom = 207.0
+color = Color(0.291468, 0.40783, 0.889385, 1)
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+position = Vector2(14, 70)
+shape = SubResource("CircleShape2D_deew5")
+
+[node name="Timer" type="Timer" parent="."]
+
+[node name="Label" type="Label" parent="."]
+offset_left = -182.0
+offset_top = -162.0
+offset_right = -101.0
+offset_bottom = -139.0
+scale = Vector2(5, 5)
+text = "MiniPekka"
+
+[node name="attack_ranage" type="Area2D" parent="."]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="attack_ranage"]
+position = Vector2(17, -100)
+shape = SubResource("CircleShape2D_ulhxi")
+
+[connection signal="timeout" from="Timer" to="." method="_on_timer_timeout"]
+[connection signal="area_entered" from="attack_ranage" to="." method="_on_attack_ranage_area_entered"]

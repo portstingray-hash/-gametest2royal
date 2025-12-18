@@ -1,0 +1,79 @@
+[gd_scene load_steps=8 format=3 uid="uid://0bd3pibw8dvo"]
+
+[ext_resource type="Texture2D" uid="uid://b165joiaamjdd" path="res://assets/arcade_logo_big.png" id="1_4o3h1"]
+[ext_resource type="Script" path="res://logo_1.gd" id="1_te63c"]
+[ext_resource type="FontFile" uid="uid://cp3jhwoobaa2l" path="res://assets/MinecraftBold-nMK1.otf" id="2_54emw"]
+[ext_resource type="AudioStream" uid="uid://mfi1pls8veoc" path="res://cr-music/supercell.mp3" id="3_07hek"]
+
+[sub_resource type="Animation" id="Animation_ouwb5"]
+resource_name = "fade"
+length = 5.0
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("Label:visible")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0, 0.6),
+"transitions": PackedFloat32Array(0.143587, 0.203063),
+"update": 1,
+"values": [false, true]
+}
+
+[sub_resource type="Animation" id="Animation_jk3pi"]
+length = 0.001
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("Label:visible")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 1,
+"values": [false]
+}
+
+[sub_resource type="AnimationLibrary" id="AnimationLibrary_ph3ol"]
+_data = {
+"RESET": SubResource("Animation_jk3pi"),
+"fade": SubResource("Animation_ouwb5")
+}
+
+[node name="Logo1" type="Node2D"]
+script = ExtResource("1_te63c")
+
+[node name="ColorRect" type="ColorRect" parent="."]
+offset_right = 3369.0
+offset_bottom = 2206.0
+size_flags_vertical = 4
+color = Color(0, 0, 0, 1)
+
+[node name="ArcadeLogoBig" type="Sprite2D" parent="."]
+position = Vector2(1782, 1535)
+scale = Vector2(1.5, 1.5)
+texture = ExtResource("1_4o3h1")
+
+[node name="Label" type="Label" parent="."]
+visible = false
+offset_left = 1219.0
+offset_top = 867.0
+offset_right = 2139.0
+offset_bottom = 1270.0
+theme_override_fonts/font = ExtResource("2_54emw")
+theme_override_font_sizes/font_size = 200
+text = "MADE BY 
+YEHUDA"
+
+[node name="AnimationPlayer" type="AnimationPlayer" parent="."]
+libraries = {
+"": SubResource("AnimationLibrary_ph3ol")
+}
+autoplay = "fade"
+
+[node name="AudioStreamPlayer" type="AudioStreamPlayer" parent="."]
+stream = ExtResource("3_07hek")
+volume_db = 7.087
+autoplay = true

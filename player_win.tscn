@@ -1,0 +1,177 @@
+[gd_scene load_steps=9 format=3 uid="uid://3qs7jidldmx1"]
+
+[ext_resource type="Script" path="res://player_win.gd" id="1_2onqk"]
+[ext_resource type="Texture2D" uid="uid://d10a244aqiqlu" path="res://assets/background_cr.png" id="1_crkql"]
+[ext_resource type="Texture2D" uid="uid://dtsj65hqw3t84" path="res://assets/crown_Crown.png" id="2_o0bq2"]
+[ext_resource type="FontFile" uid="uid://cp3jhwoobaa2l" path="res://assets/MinecraftBold-nMK1.otf" id="3_evonh"]
+[ext_resource type="Texture2D" uid="uid://chi47sawi87v5" path="res://assets/button.png" id="5_kux5u"]
+
+[sub_resource type="Animation" id="Animation_od581"]
+resource_name = "crown"
+length = 3.0
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("CrownCrown:visible")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0, 0.5),
+"transitions": PackedFloat32Array(1, 1),
+"update": 1,
+"values": [false, true]
+}
+tracks/1/type = "value"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath("CrownCrown2:visible")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/keys = {
+"times": PackedFloat32Array(0, 1),
+"transitions": PackedFloat32Array(1, 1),
+"update": 1,
+"values": [false, true]
+}
+tracks/2/type = "value"
+tracks/2/imported = false
+tracks/2/enabled = true
+tracks/2/path = NodePath("CrownCrown3:visible")
+tracks/2/interp = 1
+tracks/2/loop_wrap = true
+tracks/2/keys = {
+"times": PackedFloat32Array(0, 1.5),
+"transitions": PackedFloat32Array(1, 1),
+"update": 1,
+"values": [false, true]
+}
+tracks/3/type = "value"
+tracks/3/imported = false
+tracks/3/enabled = true
+tracks/3/path = NodePath("TextureButton:visible")
+tracks/3/interp = 1
+tracks/3/loop_wrap = true
+tracks/3/keys = {
+"times": PackedFloat32Array(0, 2),
+"transitions": PackedFloat32Array(1, 1),
+"update": 1,
+"values": [false, true]
+}
+
+[sub_resource type="Animation" id="Animation_d6erg"]
+length = 0.001
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("CrownCrown:visible")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 1,
+"values": [false]
+}
+tracks/1/type = "value"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath("CrownCrown2:visible")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 1,
+"values": [false]
+}
+tracks/2/type = "value"
+tracks/2/imported = false
+tracks/2/enabled = true
+tracks/2/path = NodePath("CrownCrown3:visible")
+tracks/2/interp = 1
+tracks/2/loop_wrap = true
+tracks/2/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 1,
+"values": [false]
+}
+tracks/3/type = "value"
+tracks/3/imported = false
+tracks/3/enabled = true
+tracks/3/path = NodePath("TextureButton:visible")
+tracks/3/interp = 1
+tracks/3/loop_wrap = true
+tracks/3/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 1,
+"values": [false]
+}
+
+[sub_resource type="AnimationLibrary" id="AnimationLibrary_hak3l"]
+_data = {
+"RESET": SubResource("Animation_d6erg"),
+"crown": SubResource("Animation_od581")
+}
+
+[node name="player_win" type="Node2D"]
+script = ExtResource("1_2onqk")
+
+[node name="Sprite2D" type="Sprite2D" parent="."]
+position = Vector2(1680.1, 1066)
+scale = Vector2(2.30787, 2.2)
+texture = ExtResource("1_crkql")
+
+[node name="CrownCrown" type="Sprite2D" parent="."]
+visible = false
+position = Vector2(1874, 797)
+scale = Vector2(50, 50)
+texture = ExtResource("2_o0bq2")
+
+[node name="CrownCrown2" type="Sprite2D" parent="."]
+visible = false
+position = Vector2(1100, 963)
+scale = Vector2(50, 50)
+texture = ExtResource("2_o0bq2")
+
+[node name="CrownCrown3" type="Sprite2D" parent="."]
+visible = false
+position = Vector2(2620, 967)
+scale = Vector2(50, 50)
+texture = ExtResource("2_o0bq2")
+
+[node name="Label" type="Label" parent="."]
+offset_left = 1164.0
+offset_top = 414.0
+offset_right = 2144.0
+offset_bottom = 614.0
+theme_override_fonts/font = ExtResource("3_evonh")
+theme_override_font_sizes/font_size = 200
+text = "You Won!"
+
+[node name="AnimationPlayer" type="AnimationPlayer" parent="."]
+libraries = {
+"": SubResource("AnimationLibrary_hak3l")
+}
+autoplay = "crown"
+
+[node name="TextureButton" type="TextureButton" parent="."]
+visible = false
+offset_left = 1408.0
+offset_top = 1455.0
+offset_right = 1920.0
+offset_bottom = 1711.0
+texture_normal = ExtResource("5_kux5u")
+
+[node name="Label2" type="Label" parent="TextureButton"]
+offset_left = 112.0
+offset_top = 61.9999
+offset_right = 140.0
+offset_bottom = 71.9999
+scale = Vector2(10, 10)
+theme_override_fonts/font = ExtResource("3_evonh")
+theme_override_font_sizes/font_size = 10
+text = "HOME"
+
+[connection signal="pressed" from="TextureButton" to="." method="_on_texture_button_pressed"]

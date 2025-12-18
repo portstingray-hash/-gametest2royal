@@ -1,0 +1,28 @@
+[gd_scene load_steps=3 format=3 uid="uid://ccogitvjnfnhf"]
+
+[ext_resource type="Script" path="res://cards/archer.gd" id="1_en774"]
+
+[sub_resource type="CircleShape2D" id="CircleShape2D_r3tu3"]
+radius = 112.071
+
+[node name="Archer" type="CharacterBody2D"]
+script = ExtResource("1_en774")
+
+[node name="ColorRect" type="ColorRect" parent="."]
+offset_left = -101.0
+offset_top = -60.0
+offset_right = 125.0
+offset_bottom = 160.0
+color = Color(1, 0.364706, 1, 1)
+
+[node name="Label" type="Label" parent="."]
+offset_left = -111.0
+offset_top = -158.0
+offset_right = -59.0
+offset_bottom = -135.0
+scale = Vector2(5, 5)
+text = "Archer"
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+position = Vector2(10, 49)
+shape = SubResource("CircleShape2D_r3tu3")

@@ -1,0 +1,57 @@
+[gd_scene load_steps=9 format=3 uid="uid://cfyodrm6sdumo"]
+
+[ext_resource type="Script" path="res://gameloading.gd" id="1_4tjfg"]
+[ext_resource type="Texture2D" uid="uid://d10a244aqiqlu" path="res://assets/background_cr.png" id="2_3fmcx"]
+[ext_resource type="Texture2D" uid="uid://dkypsag2guf6p" path="res://assets/renderbanner.png" id="3_1yinm"]
+[ext_resource type="FontFile" uid="uid://cp3jhwoobaa2l" path="res://assets/MinecraftBold-nMK1.otf" id="3_lhi6m"]
+[ext_resource type="Texture2D" uid="uid://ddpm4iwse12py" path="res://assets/royal-logo.png" id="4_isq2v"]
+[ext_resource type="Texture2D" uid="uid://c115sbcvm34qr" path="res://assets/royal.png" id="5_p2uum"]
+[ext_resource type="Texture2D" uid="uid://o1c5tj5s5wrx" path="res://assets/Untitled.png" id="6_3nukp"]
+[ext_resource type="AudioStream" uid="uid://dlw7chlgxp0s1" path="res://cr-music/battle-start.mp3" id="7_3ane4"]
+
+[node name="GameLoading" type="Node2D"]
+script = ExtResource("1_4tjfg")
+
+[node name="ColorRect" type="ColorRect" parent="."]
+offset_right = 3369.0
+offset_bottom = 2206.0
+size_flags_vertical = 4
+color = Color(0, 0, 0, 1)
+
+[node name="BackgroundCr" type="Sprite2D" parent="."]
+position = Vector2(1688.5, 1101.75)
+scale = Vector2(2.31837, 2.28238)
+texture = ExtResource("2_3fmcx")
+
+[node name="Sprite2D" type="Sprite2D" parent="."]
+position = Vector2(1645, 1011)
+scale = Vector2(20, 20)
+texture = ExtResource("3_1yinm")
+
+[node name="Untitled" type="Sprite2D" parent="Sprite2D"]
+position = Vector2(-12.6, 23)
+scale = Vector2(0.025, 0.025)
+texture = ExtResource("6_3nukp")
+
+[node name="Royal-logo" type="Sprite2D" parent="Sprite2D"]
+position = Vector2(14.2, 23.5)
+scale = Vector2(0.025, 0.025)
+texture = ExtResource("4_isq2v")
+
+[node name="Royal" type="Sprite2D" parent="Sprite2D"]
+position = Vector2(-9, 29.55)
+scale = Vector2(0.025, 0.025)
+texture = ExtResource("5_p2uum")
+
+[node name="Label" type="Label" parent="."]
+offset_left = 1218.0
+offset_top = 1739.0
+offset_right = 2170.0
+offset_bottom = 1909.0
+theme_override_fonts/font = ExtResource("3_lhi6m")
+theme_override_font_sizes/font_size = 170
+text = "LOADING..."
+
+[node name="AudioStreamPlayer" type="AudioStreamPlayer" parent="."]
+stream = ExtResource("7_3ane4")
+autoplay = true

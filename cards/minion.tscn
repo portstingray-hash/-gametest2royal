@@ -1,0 +1,28 @@
+[gd_scene load_steps=3 format=3 uid="uid://cvblabaxvvb5u"]
+
+[ext_resource type="Script" path="res://cards/minion.gd" id="1_gu354"]
+
+[sub_resource type="CircleShape2D" id="CircleShape2D_rvrt5"]
+radius = 64.0312
+
+[node name="Minion" type="CharacterBody2D" groups=["troops"]]
+script = ExtResource("1_gu354")
+
+[node name="ColorRect" type="ColorRect" parent="."]
+offset_left = -26.0
+offset_top = -18.0
+offset_right = 93.0
+offset_bottom = 109.0
+color = Color(0.227451, 0.278431, 1, 1)
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+position = Vector2(34, 44)
+shape = SubResource("CircleShape2D_rvrt5")
+
+[node name="Label" type="Label" parent="."]
+offset_left = -49.0
+offset_top = -86.0
+offset_right = 13.0
+offset_bottom = -63.0
+scale = Vector2(3, 3)
+text = "Minion"

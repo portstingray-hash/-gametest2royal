@@ -1,0 +1,55 @@
+[gd_scene load_steps=7 format=3 uid="uid://bylip7pyso5my"]
+
+[ext_resource type="Texture2D" uid="uid://d10a244aqiqlu" path="res://assets/background_cr.png" id="1_bopi2"]
+[ext_resource type="Script" path="res://banner_display.gd" id="1_n3kih"]
+[ext_resource type="Texture2D" uid="uid://cq6rep2ikk4ul" path="res://assets/banner1.png" id="2_kcle8"]
+[ext_resource type="Texture2D" uid="uid://5ox0muv82673" path="res://assets/banner2.png" id="3_ubcda"]
+[ext_resource type="Texture2D" uid="uid://oexetc81h8dl" path="res://assets/banner3.png" id="4_cflcv"]
+[ext_resource type="FontFile" uid="uid://cp3jhwoobaa2l" path="res://assets/MinecraftBold-nMK1.otf" id="5_bfq7a"]
+
+[node name="Banner Display" type="Node2D"]
+script = ExtResource("1_n3kih")
+
+[node name="BannerDisplay" type="Sprite2D" parent="."]
+
+[node name="BackgroundCr" type="Sprite2D" parent="."]
+position = Vector2(1741, 1160)
+scale = Vector2(2.4, 2.4)
+texture = ExtResource("1_bopi2")
+
+[node name="Banner1" type="TextureButton" parent="."]
+offset_left = 174.0
+offset_top = 922.0
+offset_right = 686.0
+offset_bottom = 1178.0
+scale = Vector2(2, 2)
+texture_normal = ExtResource("2_kcle8")
+
+[node name="Banner2" type="TextureButton" parent="."]
+offset_left = 1304.0
+offset_top = 916.0
+offset_right = 1816.0
+offset_bottom = 1172.0
+scale = Vector2(2, 2)
+texture_normal = ExtResource("3_ubcda")
+
+[node name="Banner3" type="TextureButton" parent="."]
+offset_left = 2444.0
+offset_top = 902.0
+offset_right = 2956.0
+offset_bottom = 1158.0
+scale = Vector2(2, 2)
+texture_normal = ExtResource("4_cflcv")
+
+[node name="Label" type="Label" parent="."]
+offset_left = 840.0
+offset_top = 756.0
+offset_right = 2721.0
+offset_bottom = 946.0
+theme_override_fonts/font = ExtResource("5_bfq7a")
+theme_override_font_sizes/font_size = 190
+text = "Choose a Banner"
+
+[connection signal="pressed" from="Banner1" to="." method="_on_banner_1_pressed"]
+[connection signal="pressed" from="Banner2" to="." method="_on_banner_2_pressed"]
+[connection signal="pressed" from="Banner3" to="." method="_on_banner_3_pressed"]

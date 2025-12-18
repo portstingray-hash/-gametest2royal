@@ -1,0 +1,34 @@
+[gd_scene load_steps=6 format=3 uid="uid://dknd2ra7iy770"]
+
+[ext_resource type="Script" path="res://deck.gd" id="1_od5q3"]
+[ext_resource type="Texture2D" uid="uid://d10a244aqiqlu" path="res://assets/background_cr.png" id="2_6uo6d"]
+[ext_resource type="Texture2D" uid="uid://cssvk55f08f76" path="res://assets/background-button-placeholder.png" id="4_2k70f"]
+[ext_resource type="Texture2D" uid="uid://4b4suxm2inrn" path="res://assets/battle.png" id="5_8ueac"]
+[ext_resource type="Texture2D" uid="uid://g1k33so41uy2" path="res://assets/battle2.png" id="6_8grvb"]
+
+[node name="Deck" type="Node2D"]
+script = ExtResource("1_od5q3")
+
+[node name="ColorRect" type="ColorRect" parent="."]
+offset_right = 3369.0
+offset_bottom = 2206.0
+size_flags_vertical = 4
+color = Color(0, 0, 0, 1)
+
+[node name="BackgroundCr" type="Sprite2D" parent="."]
+position = Vector2(1688.5, 1101.75)
+scale = Vector2(2.31837, 2.28238)
+texture = ExtResource("2_6uo6d")
+
+[node name="Background-button-placeholder" type="Sprite2D" parent="."]
+position = Vector2(1657, 2013)
+scale = Vector2(4, 4)
+texture = ExtResource("4_2k70f")
+
+[node name="TextureButton" type="TextureButton" parent="."]
+offset_left = 1936.0
+offset_top = 1715.0
+offset_right = 2320.0
+offset_bottom = 2083.0
+texture_normal = ExtResource("5_8ueac")
+texture_pressed = ExtResource("6_8grvb")

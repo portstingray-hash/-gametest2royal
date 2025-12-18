@@ -1,0 +1,12 @@
+[gd_scene load_steps=3 format=3 uid="uid://cno31w0eayn1d"]
+
+[ext_resource type="Script" path="res://music_manager.gd" id="1_prfbc"]
+[ext_resource type="AudioStream" uid="uid://fyuwi3pe8kv4" path="res://cr-music/menumusic.ogg" id="2_uaqj2"]
+
+[node name="MusicManager" type="Node"]
+script = ExtResource("1_prfbc")
+
+[node name="Music" type="AudioStreamPlayer2D" parent="."]
+stream = ExtResource("2_uaqj2")
+volume_db = 24.0
+autoplay = true

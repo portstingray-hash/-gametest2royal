@@ -1,0 +1,68 @@
+[gd_scene load_steps=6 format=3 uid="uid://du1ibppfnl0mi"]
+
+[ext_resource type="FontFile" uid="uid://cp3jhwoobaa2l" path="res://assets/MinecraftBold-nMK1.otf" id="1_27u1p"]
+[ext_resource type="Script" path="res://disclaimer.gd" id="1_cm11h"]
+
+[sub_resource type="Animation" id="Animation_jk3pi"]
+length = 0.001
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("Label:visible")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 1,
+"values": [false]
+}
+
+[sub_resource type="Animation" id="Animation_ouwb5"]
+resource_name = "fade"
+length = 5.0
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("Label:visible")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0, 0.6),
+"transitions": PackedFloat32Array(0.143587, 0.203063),
+"update": 1,
+"values": [false, true]
+}
+
+[sub_resource type="AnimationLibrary" id="AnimationLibrary_ph3ol"]
+_data = {
+"RESET": SubResource("Animation_jk3pi"),
+"fade": SubResource("Animation_ouwb5")
+}
+
+[node name="Disclaimer" type="Node2D"]
+script = ExtResource("1_cm11h")
+
+[node name="ColorRect" type="ColorRect" parent="."]
+offset_right = 3369.0
+offset_bottom = 2206.0
+size_flags_vertical = 4
+color = Color(0, 0, 0, 1)
+
+[node name="Label" type="Label" parent="."]
+visible = false
+offset_left = 929.0
+offset_top = 1665.0
+offset_right = 2269.0
+offset_bottom = 1971.0
+theme_override_fonts/font = ExtResource("1_27u1p")
+theme_override_font_sizes/font_size = 100
+text = "Disclaimer: 
+I made this for fun. 
+Supercell don't sue me"
+
+[node name="AnimationPlayer" type="AnimationPlayer" parent="."]
+libraries = {
+"": SubResource("AnimationLibrary_ph3ol")
+}
+autoplay = "fade"

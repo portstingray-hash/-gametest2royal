@@ -1,0 +1,174 @@
+[gd_scene load_steps=9 format=3 uid="uid://b4id861klxndf"]
+
+[ext_resource type="Texture2D" uid="uid://cx0wqo7l3heby" path="res://assets/emote_border.png" id="1_3tmy6"]
+[ext_resource type="AudioStream" uid="uid://dkge0o1guh8q6" path="res://sounds/kingemote.mp3" id="1_h2i3j"]
+[ext_resource type="Texture2D" uid="uid://dcriaorh6awnp" path="res://assets/king_crown.png" id="2_ua3br"]
+[ext_resource type="Texture2D" uid="uid://byuys6hrs3yk5" path="res://assets/kinglaugh.png" id="3_pntwb"]
+[ext_resource type="Texture2D" uid="uid://dwbf16la43tge" path="res://assets/king_glasses.png" id="4_6fhr2"]
+
+[sub_resource type="Animation" id="Animation_6qarl"]
+length = 0.001
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("KingGlasses:position")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Vector2(292, -522)]
+}
+tracks/1/type = "value"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath("KingGlasses:visible")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 1,
+"values": [false]
+}
+tracks/2/type = "value"
+tracks/2/imported = false
+tracks/2/enabled = true
+tracks/2/path = NodePath("Kinglaugh:frame")
+tracks/2/interp = 1
+tracks/2/loop_wrap = true
+tracks/2/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 1,
+"values": [0]
+}
+tracks/3/type = "value"
+tracks/3/imported = false
+tracks/3/enabled = true
+tracks/3/path = NodePath("KingCrown:position")
+tracks/3/interp = 1
+tracks/3/loop_wrap = true
+tracks/3/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Vector2(291, -468)]
+}
+tracks/4/type = "value"
+tracks/4/imported = false
+tracks/4/enabled = true
+tracks/4/path = NodePath("KingCrown:rotation")
+tracks/4/interp = 1
+tracks/4/loop_wrap = true
+tracks/4/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [0.0]
+}
+
+[sub_resource type="Animation" id="Animation_4m5qm"]
+resource_name = "king_laugh"
+length = 2.0
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("KingGlasses:position")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0, 1),
+"transitions": PackedFloat32Array(1, 1),
+"update": 0,
+"values": [Vector2(292, -522), Vector2(292, -218)]
+}
+tracks/1/type = "value"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath("KingGlasses:visible")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/keys = {
+"times": PackedFloat32Array(0, 1),
+"transitions": PackedFloat32Array(1, 1),
+"update": 1,
+"values": [true, false]
+}
+tracks/2/type = "value"
+tracks/2/imported = false
+tracks/2/enabled = true
+tracks/2/path = NodePath("Kinglaugh:frame")
+tracks/2/interp = 1
+tracks/2/loop_wrap = true
+tracks/2/keys = {
+"times": PackedFloat32Array(0, 1, 1.2, 1.3, 1.5, 1.7, 1.9, 2),
+"transitions": PackedFloat32Array(1, 1, 1, 1, 1, 1, 1, 1),
+"update": 1,
+"values": [0, 1, 2, 3, 2, 3, 2, 1]
+}
+tracks/3/type = "value"
+tracks/3/imported = false
+tracks/3/enabled = true
+tracks/3/path = NodePath("KingCrown:position")
+tracks/3/interp = 1
+tracks/3/loop_wrap = true
+tracks/3/keys = {
+"times": PackedFloat32Array(0, 1, 2),
+"transitions": PackedFloat32Array(1, 1, 1),
+"update": 0,
+"values": [Vector2(291, -468), Vector2(291, -512), Vector2(292, -475)]
+}
+tracks/4/type = "value"
+tracks/4/imported = false
+tracks/4/enabled = true
+tracks/4/path = NodePath("KingCrown:rotation")
+tracks/4/interp = 1
+tracks/4/loop_wrap = true
+tracks/4/keys = {
+"times": PackedFloat32Array(0, 1, 1.1, 1.2, 1.3, 1.4, 1.5, 1.6, 1.7, 1.8, 1.9),
+"transitions": PackedFloat32Array(1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1),
+"update": 0,
+"values": [0.0, 0.0, 0.211185, -0.211185, 0.211185, -0.211185, 0.211185, -0.211185, 0.211185, 0.211185, 0.0]
+}
+
+[sub_resource type="AnimationLibrary" id="AnimationLibrary_ytmxu"]
+_data = {
+"RESET": SubResource("Animation_6qarl"),
+"king_laugh": SubResource("Animation_4m5qm")
+}
+
+[node name="KingEmote" type="Node2D"]
+light_mask = 4
+visibility_layer = 4
+
+[node name="Border" type="Sprite2D" parent="."]
+texture_filter = 1
+position = Vector2(249, -131)
+scale = Vector2(42, 42)
+texture = ExtResource("1_3tmy6")
+
+[node name="AudioStreamPlayer" type="AudioStreamPlayer" parent="."]
+stream = ExtResource("1_h2i3j")
+autoplay = true
+
+[node name="AnimationPlayer" type="AnimationPlayer" parent="."]
+libraries = {
+"": SubResource("AnimationLibrary_ytmxu")
+}
+autoplay = "king_laugh"
+
+[node name="KingCrown" type="Sprite2D" parent="."]
+position = Vector2(291, -468)
+texture = ExtResource("2_ua3br")
+
+[node name="Kinglaugh" type="Sprite2D" parent="."]
+position = Vector2(291, -219)
+texture = ExtResource("3_pntwb")
+hframes = 4
+
+[node name="KingGlasses" type="Sprite2D" parent="."]
+visible = false
+position = Vector2(292, -522)
+texture = ExtResource("4_6fhr2")

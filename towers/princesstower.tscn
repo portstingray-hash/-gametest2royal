@@ -1,0 +1,46 @@
+[gd_scene load_steps=7 format=3 uid="uid://4ahjirrhu0ub"]
+
+[ext_resource type="Script" path="res://towers/princesstower.gd" id="1_qpv85"]
+[ext_resource type="Texture2D" uid="uid://bnuhus76eida2" path="res://assets/healthbar1.png" id="2_7uac4"]
+[ext_resource type="Texture2D" uid="uid://dmfrvlxc6wc45" path="res://assets/healthbar2.png" id="3_txppi"]
+[ext_resource type="Texture2D" uid="uid://bx28gr005nqm2" path="res://assets/blue_princes_tower.png" id="4_3snql"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_kvcr2"]
+size = Vector2(14.0833, 13.0167)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_d2any"]
+size = Vector2(418, 404)
+
+[node name="PrincessTower" type="StaticBody2D"]
+collision_layer = 3
+collision_mask = 3
+script = ExtResource("1_qpv85")
+
+[node name="Sprite2D" type="Sprite2D" parent="."]
+light_mask = 4
+visibility_layer = 4
+texture_filter = 1
+position = Vector2(160, -43)
+scale = Vector2(15, 15)
+texture = ExtResource("4_3snql")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+position = Vector2(65.75, 87.75)
+scale = Vector2(30, 30)
+shape = SubResource("RectangleShape2D_kvcr2")
+
+[node name="Area2D" type="Area2D" parent="."]
+collision_layer = 3
+collision_mask = 3
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Area2D"]
+position = Vector2(64, 86)
+shape = SubResource("RectangleShape2D_d2any")
+
+[node name="HealthBar" type="TextureProgressBar" parent="."]
+offset_left = -180.0
+offset_top = 309.0
+offset_right = 332.0
+offset_bottom = 565.0
+texture_under = ExtResource("2_7uac4")
+texture_progress = ExtResource("3_txppi")
