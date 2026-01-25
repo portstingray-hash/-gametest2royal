@@ -56,5 +56,3 @@ func _on_edit_pressed():
 func _on_cancel_pressed():
 	scene_change_timer.stop()
 	$AnimationPlayer.play("Homemenu")
-
-

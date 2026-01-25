@@ -33,7 +33,3 @@ func _gui_input(event):
 			emit_signal("card_dropped", global_position, card_data)
 	elif event is InputEventMouseMotion and dragging:
 		global_position = get_global_mouse_position() - drag_offset
-
-
-
-

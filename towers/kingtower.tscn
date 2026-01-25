@@ -1,6 +1,6 @@
 [gd_scene load_steps=7 format=3 uid="uid://dvvcxfn5irp8o"]
 
-[ext_resource type="Script" path="res://towers/kingtower.gd" id="1_lpyql"]
+[ext_resource type="Script" uid="uid://crm681h5l8j1u" path="res://towers/kingtower.gd" id="1_lpyql"]
 [ext_resource type="Texture2D" uid="uid://tu7pnwqk1xbf" path="res://assets/blue_king_tower.png" id="2_gs228"]
 [ext_resource type="Texture2D" uid="uid://bnuhus76eida2" path="res://assets/healthbar1.png" id="3_yukug"]
 [ext_resource type="Texture2D" uid="uid://dmfrvlxc6wc45" path="res://assets/healthbar2.png" id="4_8k20e"]
@@ -31,8 +31,8 @@ shape = SubResource("RectangleShape2D_2k7wh")
 
 [node name="Sprite2D" type="Sprite2D" parent="."]
 texture_filter = 1
-position = Vector2(28, -284)
-scale = Vector2(15, 15)
+position = Vector2(19, -119.000015)
+scale = Vector2(10, 10)
 texture = ExtResource("2_gs228")
 
 [node name="HealthBar" type="TextureProgressBar" parent="."]

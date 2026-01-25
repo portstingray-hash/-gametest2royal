@@ -12,4 +12,3 @@ func _on_text_edit_text_changed():
 func _on_confirmbutton_pressed():
 	Global.player_name = player_name
 	get_tree().change_scene_to_file("res://mainmenu.tscn")
-

@@ -23,4 +23,3 @@ func update_health_bar():
 	var bar = $HealthBar
 	if bar:
 		bar.value = float(current_hp) / max_hp * 100.0
-
