@@ -12,3 +12,8 @@ func _on_banner_2_pressed():
 func _on_banner_3_pressed():
 	Global.selected_banner = preload("res://assets/banner3.png")
 	get_tree().change_scene_to_file("res://mainmenu.tscn")
+
+
+func _on_banner_4_pressed():
+	Global.selected_banner = preload("res://assets/banner4.png")
+	get_tree().change_scene_to_file("res://mainmenu.tscn")
