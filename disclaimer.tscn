@@ -1,7 +1,7 @@
 [gd_scene load_steps=6 format=3 uid="uid://du1ibppfnl0mi"]
 
 [ext_resource type="FontFile" uid="uid://cp3jhwoobaa2l" path="res://assets/MinecraftBold-nMK1.otf" id="1_27u1p"]
-[ext_resource type="Script" path="res://disclaimer.gd" id="1_cm11h"]
+[ext_resource type="Script" uid="uid://bftmwwn4lsk5r" path="res://disclaimer.gd" id="1_cm11h"]
 
 [sub_resource type="Animation" id="Animation_jk3pi"]
 length = 0.001
@@ -36,8 +36,8 @@ tracks/0/keys = {
 
 [sub_resource type="AnimationLibrary" id="AnimationLibrary_ph3ol"]
 _data = {
-"RESET": SubResource("Animation_jk3pi"),
-"fade": SubResource("Animation_ouwb5")
+&"RESET": SubResource("Animation_jk3pi"),
+&"fade": SubResource("Animation_ouwb5")
 }
 
 [node name="Disclaimer" type="Node2D"]
@@ -63,6 +63,6 @@ Supercell don't sue me"
 
 [node name="AnimationPlayer" type="AnimationPlayer" parent="."]
 libraries = {
-"": SubResource("AnimationLibrary_ph3ol")
+&"": SubResource("AnimationLibrary_ph3ol")
 }
 autoplay = "fade"

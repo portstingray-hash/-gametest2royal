@@ -74,6 +74,9 @@ const ARROWS_COST := 3
 var can_spawn_fireball := true
 const FIREBALL_COST := 4
 
+#player info
+@onready var name_label = $playername/player_name
+
 #Info i guess
 var player_crowns = 0
 var bot_crowns = 0
@@ -163,8 +166,11 @@ func start_overtime():
 	await $AnimationPlayer.animation_finished
 	$AnimationPlayer.play("overtime")
 
+func initialize_player():
+	name_label.text = Global.player_name
 
 func _ready():
+	initialize_player()
 	var music = get_node_or_null("/root/cr-music")
 	if music:
 		music.queue_free()	

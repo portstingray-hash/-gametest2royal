@@ -1,9 +1,24 @@
 [gd_scene load_steps=8 format=3 uid="uid://0bd3pibw8dvo"]
 
 [ext_resource type="Texture2D" uid="uid://b165joiaamjdd" path="res://assets/arcade_logo_big.png" id="1_4o3h1"]
-[ext_resource type="Script" path="res://logo_1.gd" id="1_te63c"]
+[ext_resource type="Script" uid="uid://boeb0eof7vcqq" path="res://logo_1.gd" id="1_te63c"]
 [ext_resource type="FontFile" uid="uid://cp3jhwoobaa2l" path="res://assets/MinecraftBold-nMK1.otf" id="2_54emw"]
 [ext_resource type="AudioStream" uid="uid://mfi1pls8veoc" path="res://cr-music/supercell.mp3" id="3_07hek"]
+
+[sub_resource type="Animation" id="Animation_jk3pi"]
+length = 0.001
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("Label:visible")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 1,
+"values": [false]
+}
 
 [sub_resource type="Animation" id="Animation_ouwb5"]
 resource_name = "fade"
@@ -21,25 +36,10 @@ tracks/0/keys = {
 "values": [false, true]
 }
 
-[sub_resource type="Animation" id="Animation_jk3pi"]
-length = 0.001
-tracks/0/type = "value"
-tracks/0/imported = false
-tracks/0/enabled = true
-tracks/0/path = NodePath("Label:visible")
-tracks/0/interp = 1
-tracks/0/loop_wrap = true
-tracks/0/keys = {
-"times": PackedFloat32Array(0),
-"transitions": PackedFloat32Array(1),
-"update": 1,
-"values": [false]
-}
-
 [sub_resource type="AnimationLibrary" id="AnimationLibrary_ph3ol"]
 _data = {
-"RESET": SubResource("Animation_jk3pi"),
-"fade": SubResource("Animation_ouwb5")
+&"RESET": SubResource("Animation_jk3pi"),
+&"fade": SubResource("Animation_ouwb5")
 }
 
 [node name="Logo1" type="Node2D"]
@@ -69,7 +69,7 @@ YEHUDA"
 
 [node name="AnimationPlayer" type="AnimationPlayer" parent="."]
 libraries = {
-"": SubResource("AnimationLibrary_ph3ol")
+&"": SubResource("AnimationLibrary_ph3ol")
 }
 autoplay = "fade"
 
@@ -77,3 +77,15 @@ autoplay = "fade"
 stream = ExtResource("3_07hek")
 volume_db = 7.087
 autoplay = true
+
+[node name="Label2" type="Label" parent="."]
+offset_left = 1542.0
+offset_top = 1344.9999
+offset_right = 2896.0
+offset_bottom = 1684.9999
+scale = Vector2(0.2, 0.2)
+theme_override_fonts/font = ExtResource("2_54emw")
+theme_override_font_sizes/font_size = 100
+text = "Disclaimer: 
+I made this for fun. 
+Supercell don't sue me"

@@ -5,4 +5,4 @@ func _ready():
 	call_deferred("_changed_scene")
 	
 func _changed_scene():
-	get_tree().change_scene_to_file("res://disclaimer.tscn")
+	get_tree().change_scene_to_file("res://tips.tscn")

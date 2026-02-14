@@ -1,6 +1,6 @@
 [gd_scene load_steps=36 format=3 uid="uid://bevipysoafmqn"]
 
-[ext_resource type="Script" path="res://mainmenu.gd" id="1_1hpje"]
+[ext_resource type="Script" uid="uid://bloennjyd7w0s" path="res://mainmenu.gd" id="1_1hpje"]
 [ext_resource type="Texture2D" uid="uid://d10a244aqiqlu" path="res://assets/background_cr.png" id="2_rmh5v"]
 [ext_resource type="Texture2D" uid="uid://cssvk55f08f76" path="res://assets/background-button-placeholder.png" id="4_7w8cp"]
 [ext_resource type="FontFile" uid="uid://cp3jhwoobaa2l" path="res://assets/MinecraftBold-nMK1.otf" id="4_k2su3"]
@@ -13,7 +13,7 @@
 [ext_resource type="Texture2D" uid="uid://b22ln6nn4auw1" path="res://assets/cards_pressed.png" id="10_4vmqi"]
 [ext_resource type="AudioStream" uid="uid://dgieapvcljehv" path="res://cr-music/overtime-sound.mp3" id="11_oapmt"]
 [ext_resource type="Texture2D" uid="uid://bmqiwr1880qfp" path="res://assets/arena.png" id="12_37cii"]
-[ext_resource type="Texture2D" uid="uid://oexetc81h8dl" path="res://assets/banner3.png" id="15_27aql"]
+[ext_resource type="Texture2D" uid="uid://oju7n7d4q2jg" path="res://assets/banner7.png" id="14_i887n"]
 [ext_resource type="Texture2D" uid="uid://b4u2i67qml8ao" path="res://assets/edit.png" id="16_c1sbq"]
 [ext_resource type="Texture2D" uid="uid://bsbsae3ycd3xn" path="res://assets/trophy.png" id="17_lq712"]
 [ext_resource type="Texture2D" uid="uid://5u84ty5njior" path="res://assets/woodenboard.png" id="19_0phyn"]
@@ -128,6 +128,7 @@ tracks/1/keys = {
 
 [sub_resource type="Animation" id="Animation_1jarx"]
 resource_name = "loading"
+length = 10.0
 tracks/0/type = "value"
 tracks/0/imported = false
 tracks/0/enabled = true
@@ -155,11 +156,11 @@ tracks/1/keys = {
 
 [sub_resource type="AnimationLibrary" id="AnimationLibrary_xwfxa"]
 _data = {
-"Homemenu": SubResource("Animation_1xu58"),
-"RESET": SubResource("Animation_ngymb"),
-"banner": SubResource("Animation_aao2b"),
-"deck": SubResource("Animation_uuftg"),
-"loading": SubResource("Animation_1jarx")
+&"Homemenu": SubResource("Animation_1xu58"),
+&"RESET": SubResource("Animation_ngymb"),
+&"banner": SubResource("Animation_aao2b"),
+&"deck": SubResource("Animation_uuftg"),
+&"loading": SubResource("Animation_1jarx")
 }
 
 [node name="MainMenu" type="Node2D"]
@@ -216,7 +217,7 @@ autoplay = true
 
 [node name="AnimationPlayer" type="AnimationPlayer" parent="."]
 libraries = {
-"": SubResource("AnimationLibrary_xwfxa")
+&"": SubResource("AnimationLibrary_xwfxa")
 }
 autoplay = "Homemenu"
 
@@ -287,7 +288,7 @@ text = "LOADING..."
 [node name="option" type="Sprite2D" parent="."]
 position = Vector2(659, 345)
 scale = Vector2(2.4, 2.4)
-texture = ExtResource("15_27aql")
+texture = ExtResource("14_i887n")
 
 [node name="BannerDisplay" type="Sprite2D" parent="."]
 position = Vector2(646, 348)
